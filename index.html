@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Julius+Sans+One|Rock+Salt" rel="stylesheet">
+  <!-- LINK CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Restaurant Reviews - NYC</title>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <h1><a href="/" tabindex="1">NYC Restaurant Reviews</a></h1>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main id="maincontent" role="main">
+    <section id="map-container" tabindex="-1">
+      <div id="map" role="application" aria-hidden="true" tabindex="-1"></div>
+    </section>
+    <section>
+      <div class="filter-options" aria-labelledby="filter-results">
+        <h2>Filter Results</h2>
+        <select id="neighborhoods-select" name="neighborhoods" aria-labelledby="select neighborhood" onchange="updateRestaurants()" tabindex="2">
+          <option value="all">All Neighborhoods</option>
+        </select>
+        <select id="cuisines-select" name="cuisines" aria-labelledby="select cusisine" onchange="updateRestaurants()" tabindex="3">
+          <option value="all">All Cuisines</option>
+        </select>
+      </div>
+      <ul id="restaurants-list" tabindex="4"></ul>
+    </section>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
+  <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
+  <!-- MAPS API -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDghw81qCAO7CDU2WAhNTRG9xcVgj8uL4k&libraries=places&callback=initMap"></script>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    Copyright (c) 2018 <a href="/"><strong>Restaurant Reviews - NYC</strong></a> All Rights Reserved.
+  </footer>
+
+</body>
+</html>
